@@ -129,6 +129,7 @@ How much is the work asking of the reader emotionally?
 - **Picking incompatible combinations without flagging.** Functional + Provocative is technically valid but very hard. The skill should surface that the combination is rare and ask the user to confirm.
 - **Producing a brief no one references.** A brief that does not change downstream output is decoration. The test of a good brief is whether the output would be different if a different brief were used.
 - **Contaminating the investigation agent.** If the agent running the visual evidence pass (step 2) has seen the brief, a prior spike's direction, or the user's stated preference, its report stops being independent evidence and becomes an echo of what it already expected to find. Isolation is the entire value of that step; skip it rather than run it compromised.
+- **Resolving ambiguous source material into a confident institutional claim.** Real material (a caption, a hashtag, a comment) sometimes supports more than one reading: a generic term versus a proper name, a recurring fixture versus a one-off. The brief and any downstream copy should default to the cautious, general reading and log the ambiguity in the brief's Open Questions section rather than silently picking the more specific reading because it makes better copy. This applies with extra weight to anything a downstream skill would phrase as an ownership or "we have X" claim; see the parallel rule in `landing-page-copy`'s "If required data is unavailable or ambiguous."
 
 ---
 

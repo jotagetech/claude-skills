@@ -254,9 +254,11 @@ Structure:
 
 ---
 
-## If required data is unavailable
+## If required data is unavailable or ambiguous
 
 This skill's output depends on data, measurements, or tool results it cannot generate on its own. When a required input, tool, or data source is unavailable or unverifiable, the sanctioned output is the deliverable with the gap stated: what was needed, what was actually obtained or verified, and which parts of the output are affected. Fabricating, estimating, or interpolating a required number to complete the deliverable is never sanctioned. A stated gap is a complete answer.
+
+The same discipline applies when a source is present but ambiguous: a caption, hashtag, or comment that supports more than one plausible reading (a generic term versus a proper name, a one-off event versus a recurring one, a visitor versus a resident). Institutional or ownership claims ("our X", "we have Y", named individuals or mascots as belonging to the business) are the highest-risk case, because the specific reading is what turns a harmless detail into a factual claim the business itself has to stand behind. Default to the more general, cautious reading, or state the ambiguity as an open item for the client or the person who knows the business to confirm, rather than silently picking the more specific, more confident reading to make the copy read better. A flagged ambiguity is a complete answer; a confident guess that turns out wrong is not something the client can quietly walk back once the page is live.
 
 ---
 
