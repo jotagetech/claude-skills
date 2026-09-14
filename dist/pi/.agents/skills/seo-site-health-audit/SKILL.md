@@ -115,7 +115,7 @@ P0-P1 work earns the team's attention. P2 goes on the roadmap. P3 batches into r
 
 1. **Pull the crawl results.** Ahrefs Site Audit + Search Console + Core Web Vitals.
 2. **Tier the URLs.** Use organic traffic data. Tag every affected URL as Tier 1, 2, or 3.
-3. **Categorize each issue by mechanism.** Look up the HIGH, MEDIUM, or LOW grade in `references/issue-impact-table.md`.
+3. **Categorize each issue by mechanism.** Look up the HIGH, MEDIUM, or LOW grade in [`references/issue-impact-table.md`](references/issue-impact-table.md).
 4. **Estimate effort per fix type.** Group similar fixes into one effort estimate.
 5. **Apply the triage matrix.** Assign P0-P3 or Park.
 6. **Cluster the fixes.** Group fixes that share an effort: one template change can resolve hundreds of issues.

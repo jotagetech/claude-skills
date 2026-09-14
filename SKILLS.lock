@@ -267,10 +267,11 @@
     "references/reference-bank/rugged-utilitarian-documentary-honest-regional-used-vehicle-marketplace.md": "3e54545c7bb9fa5f0aec2a0689098b9a08a78cdd5dfa87c93cc8c600e5ca2f27"
   },
   "creative-direction": {
-    "SKILL.md": "fc11c13225666233b3e544854a7a46a19d3a04ced7faefaa0fc1cfd892fd0eb4",
+    "SKILL.md": "4d871c2dc6d63b3dcb512aa1b8bc58ba0572524749fdbe421316d594298aa1bc",
     "references/axes-explained.md": "51240a8dd878665176ca289f52bb8d15c5ac7454dd461bf6ea89ebd0c1b5e1cc",
     "references/brief-template.md": "bbcf997ba2049d58858758018bb81412c783f1d9a7d1e07ae0dc2615de9f8ddc",
-    "references/example-aesthetic-brief.md": "9b99900f15182d05c705808691a2941aeb3ad48ab18b533fa28e0d3481282f91"
+    "references/example-aesthetic-brief.md": "9b99900f15182d05c705808691a2941aeb3ad48ab18b533fa28e0d3481282f91",
+    "references/visual-evidence-investigation.md": "bc8a1dc6e090de282eed0637162f4082b55af20a76659100d94db841cd09ff63"
   },
   "cro-optimization": {
     "SKILL.md": "477496915d2c6a184bfff9cd337608eb8fde82ec5e7f20c398178240efa68cb0",
@@ -476,7 +477,7 @@
     "references/job-statement-structure-patterns.md": "80cac04e5df9c3b27ce922d6e606e00914d899fa2df88053369c3f333fff0033"
   },
   "landing-page-copy": {
-    "SKILL.md": "6c9d954e7194e2c6dfd63783adea1a6aa2d59f0eba8689acba7f7296aeb07fd2",
+    "SKILL.md": "38348632845eaaa44eeaf55e7887cac9ee873b7c29619497234301cf4cb9812c",
     "references/hero-formulas.md": "654fedde24827379c2ef62f9f9c5ef283cf23d0a1e58b991a51714b65d9a47cb",
     "references/objection-library.md": "bc0ee97281d1d5710dfb453f1018434d0d86c090fc1f5991506f93e4789ea585"
   },
@@ -722,7 +723,7 @@
     "references/dashboard-template.md": "c3a67a6373add2721902216eb4652c3a1077f9e5fd45daee4b9dc76bbb740296"
   },
   "seo-site-health-audit": {
-    "SKILL.md": "c6dbbbc974665cb6d08c1bab79577acd79100033259476160ff47e53adbdecb0",
+    "SKILL.md": "be3dd3e3ef427f7329094c8c7ff185a0ccd97aae8752fe7eaaaa50b4c5a023d2",
     "references/issue-impact-table.md": "3380c9ebfe0861c477c438088f9c160eb55b6c756eb948c64ac7f783323336e7"
   },
   "seo-technical": {
@@ -733,6 +734,12 @@
   "seo-traffic-diagnosis": {
     "SKILL.md": "5fbdd8fb9bdd2d10b70119cdd22d17fcece4f5eb0306ec862248cd5bb360232a",
     "references/diagnosis-checklist.md": "f1d2a4bff1a9b764e6523b3f17fc78a4e6f9515ff939ff05346326106e933848"
+  },
+  "site-builder-pipeline": {
+    "SKILL.md": "9da00197ad0ce4787424654ffd59a5f7d173a2044ce18fd5fa5e3cf526857fd2",
+    "references/deploy-and-repo.md": "d4835fa30e7f41b10825b5da543e4761c7ce7787230a69ff571b6cc018abf8eb",
+    "references/pipeline-phases.md": "68a9e2392ba6f296cf61781f2e71ebb8bf7ab27b0585f2cc9479e79fe0f2a96b",
+    "references/template-promotion.md": "55dc1de107e7fe12d9ca55e6cb51f4784eae7cdb739d45f42d7f8226acfd6093"
   },
   "skill-creation-walkthrough": {
     "SKILL.md": "d9562ff1d9ee3620cf728d0b7a062f2cc1a58508fcf9043b344bf23805e5608e",

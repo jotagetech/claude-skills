@@ -44,6 +44,7 @@ This skill turns vague creative intent into a structured brief that downstream s
 - Target audience (rough is fine; full audience profiles come from `brand-discovery`)
 - Business goal (what changes if this project works)
 - Optional but high-value: 2 to 4 reference URLs (sites, brands, or pieces) the user admires, with a sentence on what specifically resonates
+- Optional but high-value: real visual material the project already has (product photos, a physical space, a social feed) for an isolated investigation pass before the axis walk; see [`references/visual-evidence-investigation.md`](references/visual-evidence-investigation.md)
 - Optional: existing brand assets if the project is a refresh, not greenfield
 - Constraints worth declaring (parent brand voice, regulatory tone requirements, accessibility floors)
 
@@ -109,12 +110,13 @@ How much is the work asking of the reader emotionally?
 ## Workflow
 
 1. **Gather inputs.** Project name, description, audience, goal, references.
-2. **Walk through each axis as a question.** One axis at a time. For each, present the positions, surface tradeoffs, and capture the user's selection plus reasoning.
-3. **Capture inspiration references.** For each provided reference URL, ask what specifically resonates. The answer often clarifies which axis position fits better than abstract description does.
-4. **Surface tensions.** Some combinations are difficult to execute well. Functional + Provocative is rare since provocation usually requires emotional engagement that pure functional work resists. Authority + Functional often slides into preachy without warming up at least slightly. Flag tensions and ask the user to confirm or reconsider.
-5. **Synthesize.** Write a one-paragraph synthesis describing what this combination produces in practice.
-6. **Output the brief.** Markdown format using the structure in [`references/brief-template.md`](references/brief-template.md). The brief becomes a project artifact (typically saved as `BRIEF.md` at the project root).
-7. **Hand off.** Reference the brief in any downstream skill that produces aesthetic output. Required reading before `landing-page-copy`, `art-direction`, `content-and-copy`, `brand-style-guide`, or any other skill where coherence matters.
+2. **Investigate visual evidence, if any exists.** When the project already has real visual material (product photos, a physical space, a social feed), dispatch it to an isolated agent or session with no inherited context: no brief, no prior project history, no aesthetic preference the user has already stated. It reports only what is actually in the material, nothing about direction. See [`references/visual-evidence-investigation.md`](references/visual-evidence-investigation.md) for the exact dispatch prompt and output shape. Skip this step when no such material exists yet.
+3. **Walk through each axis as a question.** One axis at a time. For each, present the positions, surface tradeoffs, and capture the user's selection plus reasoning. Where an investigation report from step 2 exists, weigh it alongside the user's own read; the two should corroborate, and a real gap between them is worth surfacing before locking the axis.
+4. **Capture inspiration references.** For each provided reference URL, ask what specifically resonates. The answer often clarifies which axis position fits better than abstract description does. Fold in the investigation report here too, as evidence from the project's own material rather than outside inspiration.
+5. **Surface tensions.** Some combinations are difficult to execute well. Functional + Provocative is rare since provocation usually requires emotional engagement that pure functional work resists. Authority + Functional often slides into preachy without warming up at least slightly. Flag tensions and ask the user to confirm or reconsider.
+6. **Synthesize.** Write a one-paragraph synthesis describing what this combination produces in practice.
+7. **Output the brief.** Markdown format using the structure in [`references/brief-template.md`](references/brief-template.md). The brief becomes a project artifact (typically saved as `BRIEF.md` at the project root).
+8. **Hand off.** Reference the brief in any downstream skill that produces aesthetic output. Required reading before `landing-page-copy`, `art-direction`, `content-and-copy`, `brand-style-guide`, or any other skill where coherence matters.
 
 ---
 
@@ -126,6 +128,8 @@ How much is the work asking of the reader emotionally?
 - **Brief drift mid-project.** The most common failure. The brief gets written, then ignored. Discipline: every downstream skill checks the brief before producing output. If a skill wants to violate the brief, the violation is a decision the user makes consciously, not an accident.
 - **Picking incompatible combinations without flagging.** Functional + Provocative is technically valid but very hard. The skill should surface that the combination is rare and ask the user to confirm.
 - **Producing a brief no one references.** A brief that does not change downstream output is decoration. The test of a good brief is whether the output would be different if a different brief were used.
+- **Contaminating the investigation agent.** If the agent running the visual evidence pass (step 2) has seen the brief, a prior spike's direction, or the user's stated preference, its report stops being independent evidence and becomes an echo of what it already expected to find. Isolation is the entire value of that step; skip it rather than run it compromised.
+- **Resolving ambiguous source material into a confident institutional claim.** Real material (a caption, a hashtag, a comment) sometimes supports more than one reading: a generic term versus a proper name, a recurring fixture versus a one-off. The brief and any downstream copy should default to the cautious, general reading and log the ambiguity in the brief's Open Questions section rather than silently picking the more specific reading because it makes better copy. This applies with extra weight to anything a downstream skill would phrase as an ownership or "we have X" claim; see the parallel rule in `landing-page-copy`'s "If required data is unavailable or ambiguous."
 
 ---
 
@@ -151,3 +155,4 @@ The brief is reference material for the project's life, not a one-time deliverab
 - [`references/axes-explained.md`](references/axes-explained.md) - The four axes in depth, with positions, signals, and short brand examples per position to calibrate the user's eye.
 - [`references/brief-template.md`](references/brief-template.md) - Blank template for the brief output.
 - [`references/example-aesthetic-brief.md`](references/example-aesthetic-brief.md) - A fully completed brief from a representative project, showing how the abstract axes translate into concrete creative direction.
+- [`references/visual-evidence-investigation.md`](references/visual-evidence-investigation.md): when and how to run an isolated visual evidence pass over the project's own real material, including the exact dispatch prompt and how the report feeds back into the axis walk.
