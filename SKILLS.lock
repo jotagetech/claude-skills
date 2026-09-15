@@ -736,8 +736,9 @@
     "references/diagnosis-checklist.md": "f1d2a4bff1a9b764e6523b3f17fc78a4e6f9515ff939ff05346326106e933848"
   },
   "site-builder-pipeline": {
-    "SKILL.md": "73ca291a4f441fe2668276840336f172cd0f98482208aa92428ab7c8d46fa3b7",
+    "SKILL.md": "fc2e0642546c49eaad72cfc4fc667da900aab6cac2c4b7f755c2d9ac8da878d6",
     "references/deploy-and-repo.md": "709b53ac76f095215c5d8ac49f3612a393ef2dba07a5aa261c6de77cb7f6882e",
+    "references/maintenance-mode.md": "e503e0194da9455f231e8bbb973a87a1d0b472c5a60520184ce618681dea640b",
     "references/pipeline-phases.md": "69498f6537dad3ca17702da10fa80aa6875b510f795c2a85f3b787a8eb5fb9ea",
     "references/template-promotion.md": "acc0343917a971a259e7a9db3fcc969c5aa416bc2cb4c923ab6d9f1534fdc30d"
   },
