@@ -31,16 +31,18 @@
 Add the marketplace, then install the plugin you want:
 
 ```
-/plugin marketplace add rampstackco/claude-skills
+/plugin marketplace add jotagetech/claude-skills
 
 # full catalog (104 skills)
 /plugin install rampstack-skills@rampstack
 
-# focused subsets
+# focused subsets (from the upstream rampstackco repos, unaffected by this fork's addition)
 /plugin install rampstack-starter@rampstack
 /plugin install rampstack-seo@rampstack
 /plugin install rampstack-pm@rampstack
 ```
+
+This fork points at `jotagetech/claude-skills` instead of upstream, so the full catalog above also includes the `site-builder-pipeline` skill (see [Process and team](#process-and-team-6)).
 
 Prefer a lighter marketplace that lists only the curated subsets (no full catalog)? Add `rampstackco/plugins` instead and install the same three plugins from there:
 
