@@ -739,7 +739,7 @@ Paid media discipline: strategy, creative, and performance analytics. Pairs with
 | [`vendor-evaluation`](skills/vendor-evaluation/SKILL.md) | Tool and vendor selection using a structured rubric |
 | [`team-onboarding-playbook`](skills/team-onboarding-playbook/SKILL.md) | 30-60-90 onboarding plans for new hires and contractors |
 | [`skill-creation-walkthrough`](skills/skill-creation-walkthrough/SKILL.md) | The meta-skill: how to write your own custom skills |
-| [`site-builder-pipeline`](skills/site-builder-pipeline/SKILL.md) | Coordinates isolated research, brief, build, test, and deploy agents into one finished demo site |
+| [`site-builder-pipeline`](skills/site-builder-pipeline/SKILL.md) | Coordinates isolated research, brief, build, and test agents into one finished, repository-ready demo site |
 <!-- CATALOG:END -->
 
 ---

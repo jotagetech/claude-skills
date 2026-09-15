@@ -1,23 +1,19 @@
-# Deploy And Repository: The Final Stage In Detail
+# Repository And Deploy: The Final Stage In Detail
 
-Two separate outputs, not one. Keep them decoupled: neither has to wait on the other.
+The pipeline's automated scope ends with a pushed, ready to deploy repository. Going live is a separate, manual step, done by a human, not dispatched as a stage of this pipeline.
 
 ---
 
-## The repository, always created
+## The repository, always created and pushed
 
-Every project gets its own repository in source control, regardless of how the live deploy itself happens. This is for version history and later handoff (if the project ever needs to change ownership), not a dependency the deploy step needs. Create it and push the approved build's files as the first commit.
+Every project gets its own repository in source control. Create it and push the approved build's files as the first commit. This is the pipeline's actual last automated action; nothing past this point runs unattended.
 
-## The live deploy, autonomous once stage 6 approves
+## Going live is manual, and linked to the repository
 
-Once the build has passed stage 6, deploy the approved files straight to the host. Prefer whichever mechanism does not require the repository to already be linked and building; a host that accepts a direct file tree and returns a live URL immediately is faster and has fewer failure points than one that requires a repository connection to be wired up first. If the host also offers a repository linked deploy (so that a future push redeploys automatically), that is a separate, optional convenience layered on top of the repository already created above, not a substitute for the direct deploy.
+Once the repository exists, a human connects it to the hosting platform and triggers the deploy themselves, using the platform's own repository linked deploy (so a future push redeploys automatically once it is set up). No agent in this pipeline calls a direct file deploy or triggers a live deploy on its own. This is a deliberate reversal of an earlier version of this pipeline that deployed autonomously; that approach produced a live, public deploy before anyone had looked at it, which is more than this project wants automated for now.
 
-**This project's current tooling:** repositories live in the team's GitHub organization. Live deploys go to Vercel, using a direct file deploy rather than a repository linked one, since the direct path does not depend on the repository push succeeding first (source control permission prompts or a blocked push should never block the live URL from existing).
+**This project's current tooling:** repositories live in the team's GitHub organization. Once a repository is pushed, connecting it to Vercel (via the dashboard or a repository linked deploy tool) and triggering the first deploy is something a person does, on request, not something a stage of this pipeline does on its own.
 
-## No approval gate before going live
+## What this stage reports back
 
-This stage does not pause for a human sign off before publishing. That is a deliberate change from how earlier builds in this project were handled, where every deploy waited for explicit confirmation. The whole point of this pipeline is a finished, live demo at the end of one unattended run; a mandatory pause here would defeat that. The only thing that stops this stage is the deploy mechanism itself failing (a tool error, a naming collision, an authentication problem), which is a genuine problem and gets reported as one, not treated as a routine status update.
-
-## What to report back
-
-The live URL and the repository's location, together, as the pipeline's closing message. If a template was promoted earlier in the run, note that too, since it is easy to lose track of a decision made a few stages earlier.
+The repository's location, and a note that it is ready for a human to connect and deploy. If a template was promoted earlier in the run, note that too, since it is easy to lose track of a decision made a few stages earlier. This stage does not report a live URL, because producing one is no longer part of what it does.

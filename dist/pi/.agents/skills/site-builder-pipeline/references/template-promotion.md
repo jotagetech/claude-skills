@@ -39,7 +39,7 @@ Do not touch the client's own project repository. Publish the result as a new ad
 
 ## On no
 
-Nothing is published. The pipeline continues straight to deploy with the build as is. The vertical remains without a template until a future run is promoted, or until the user builds one deliberately outside this pipeline.
+Nothing is published. The pipeline continues straight to the repository stage with the build as is. The vertical remains without a template until a future run is promoted, or until the user builds one deliberately outside this pipeline.
 
 ## A later replacement
 

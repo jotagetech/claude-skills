@@ -1,14 +1,14 @@
 ---
 name: site-builder-pipeline
-description: "Coordinate a chain of isolated agents that turn one request (a business name plus a reference such as a social profile or an existing site) into a finished, deployed demo: research, an isolated visual read, a creative brief, copy, a build that reuses or originates a reusable template for the vertical, a test and fix loop, and an autonomous deploy. Use whenever the user asks to research and build a landing page or demo site for a named business from a handle or URL, wants the build divided across specialized agents instead of one session doing everything, or wants a repeatable pipeline for pre-contract showcase sites. Triggers on build a demo for, research and build a site for, run the site pipeline, generate a showcase site, divide the build across agents, pipeline for a new demo. Does NOT fire for one isolated step already covered by a skill it coordinates (use `creative-direction`, `landing-page-copy`, or `vertical-site-conventions` directly), or for editing an already deployed site."
+description: "Coordinate isolated agents that turn one request (a business name plus a reference such as a social profile or an existing site) into a finished demo, pushed to its own repository and ready for a human to deploy: research, an isolated visual read, a creative brief, copy, a build that reuses or originates a template for the vertical, and a test and fix loop. Use whenever the user asks to research and build a landing page or demo for a named business from a handle or URL, wants the build divided across agents instead of one session doing everything, or wants a repeatable pipeline for pre-contract showcase sites. Triggers on build a demo for, research and build a site for, run the site pipeline, generate a showcase site, divide the build across agents. Does NOT fire for one step already covered by a skill it coordinates (`creative-direction`, `landing-page-copy`, `vertical-site-conventions`), for editing an already deployed site, or for the deploy step, which is manual."
 category: process-and-team
-catalog_summary: "Coordinates isolated research, brief, build, test, and deploy agents into one finished demo site"
+catalog_summary: "Coordinates isolated research, brief, build, and test agents into one finished, repository-ready demo site"
 display_order: 6
 ---
 
 # Site Builder Pipeline
 
-One request in, one deployed site out, built by a chain of agents that never share more context than the one artifact each needs.
+One request in, one finished site out, pushed to its own repository and ready for a human to deploy, built by a chain of agents that never share more context than the one artifact each needs.
 
 This skill does not do any of the creative or technical work itself. It coordinates. Every stage below is a separate agent or session with no inherited conversation history, given only the specific input that stage requires. The isolation is the point: a build agent that has seen the research narrative starts anchoring to it instead of the brief, and a test agent that has seen the build agent's reasoning starts rationalizing instead of checking. Keeping each stage blind to everything upstream except its one required artifact is what keeps the later stages honest.
 
@@ -16,7 +16,7 @@ This skill does not do any of the creative or technical work itself. It coordina
 
 ## When to use
 
-- A business name and one reference (a social handle, an existing site, a physical address) come in, and the ask is a finished, deployed demo, not one step of the process
+- A business name and one reference (a social handle, an existing site, a physical address) come in, and the ask is a finished demo, pushed and ready to deploy, not one step of the process
 - The build needs to run unattended after the initial request. It should interrupt only for a genuine problem, an ambiguous fact that needs a human call, or a build that keeps failing its own test
 - A vertical (restaurant, retail, clinic, etc.) may already have a reusable starter worth cloning instead of building from zero, and the pipeline should check for that automatically
 - Producing another entry in a running series of pre-contract showcase sites, where consistency of process matters more than any single build
@@ -24,7 +24,7 @@ This skill does not do any of the creative or technical work itself. It coordina
 ## When NOT to use
 
 - Running one stage in isolation (research only, a brief only, a copy pass only). Invoke that stage's own skill (`creative-direction`, `landing-page-copy`, `vertical-site-conventions`) directly instead of the whole chain
-- Editing or iterating on a site that is already built and deployed. This skill's scope ends at first deploy
+- Editing or iterating on a site that has already been pushed and deployed. This skill's scope ends once the repository is pushed; the deploy itself, and anything after it, is outside this skill
 - A project where the user wants to make every creative call personally, in one continuous conversation, rather than delegate stages to isolated agents
 - Any step that needs the user's own visual curation (choosing among finished photo or aesthetic candidates). That judgment call is a required interrupt, not something a stage should resolve on its own
 
@@ -36,7 +36,7 @@ This skill does not do any of the creative or technical work itself. It coordina
 - One reference: a social handle, a URL, or an address the research stage can start from
 - The vertical, if already known (this skips a research guess); otherwise the research stage infers it
 - The path or handle for the vertical's reusable template store (a repository or directory the build stage checks before building from zero)
-- Where the finished site is deployed to: a host, and separately a source control destination for the project's own repository
+- A source control destination for the project's own repository (the pipeline pushes here; connecting the repository to a host and deploying it is a manual step a human does afterward, outside this pipeline)
 
 ---
 
@@ -50,7 +50,7 @@ Each stage is named by what it hands the next stage, not by who runs it. A stage
 4. **Copy, producing page text.** Run `landing-page-copy` (or the project's equivalent) against the brief (3) and the facts (1). Output is the page's written content, with the same ambiguous data caution already baked into that skill.
 5. **Build, producing the site.** See the vertical template branch below; this is the one stage with two distinct paths.
 6. **Test and review, producing an approved build or a return trip.** Check the build against `vertical-site-conventions`'s composition checklist for the vertical's shape (eight or more of ten conventions present is the bar), against the same ambiguous data rule from stage 1, and against the no price rule below. A pass hands the build to deploy. A fail hands the build back to stage 5 with the specific reason, not a summary of everything else; see the correction loop below.
-7. **Deploy, producing a live URL.** Once approved, create the project's own repository (every project gets one, independent of whether the host needs it) and deploy the approved files straight to the host. This stage does not wait for a human sign off before going live; it only stops if the deploy itself fails. See [`references/deploy-and-repo.md`](references/deploy-and-repo.md).
+7. **Repository, producing a pushed, ready to deploy project.** Once approved, create the project's own repository and push the approved files. This is the pipeline's last automated step. Going live from there is manual: a human connects the repository to a host and triggers the deploy themselves, on their own schedule. See [`references/deploy-and-repo.md`](references/deploy-and-repo.md).
 
 ### The build stage's two paths
 
@@ -77,7 +77,7 @@ A failed check is not an interrupt by default. Send the specific failure back to
 6. Check whether a template exists for the vertical. Dispatch stage 5 down the matching path (clone and fill, or build with a structural agent). Wait for the site's files.
 7. Dispatch stage 6 (test and review) against the built files. On fail, loop back to step 6 with the stated reason, up to the attempt cap; on cap out, interrupt the user. On pass, continue.
 8. If stage 5 ran the no template path, ask the user once whether this approved build should become the vertical's official template. On yes, dispatch the cleanup stage described in [`references/template-promotion.md`](references/template-promotion.md) before continuing. On no, continue without publishing anything as a template.
-9. Dispatch stage 7 (deploy). Report the live URL and the repository back to the user. This is the pipeline's normal end state; nothing here waits for approval.
+9. Dispatch stage 7 (repository creation and push). Report the repository back to the user as ready for a manual deploy. This is the pipeline's normal end state; nothing here waits for approval, and nothing here goes live on its own.
 10. Any stage that hits a genuinely ambiguous fact, a blocked tool, or an exhausted correction loop stops and asks the user directly, naming the specific stage and the specific question, rather than surfacing a general status update.
 
 ---
@@ -89,7 +89,8 @@ A failed check is not an interrupt by default. Send the specific failure back to
 - **Treating a stage 6 failure as an automatic interrupt.** Most failures are correctable by a fresh build attempt with the specific reason in hand. Reserve the interrupt for the attempt cap, not the first failure.
 - **Promoting a build to the vertical's template without the human checkpoint.** The pipeline can propose; only a human decision turns a one off demo into the thing every future build in that vertical starts from. Do not infer approval from a demo simply passing its own test.
 - **Publishing a client's actual data as the vertical template.** A promoted template gets cleaned of the client's name, photos, and text before it is committed as a starter; the client's own project stays a separate, untouched repository.
-- **Treating the deploy stage's autonomy as license to skip the repository.** Every project gets its own repository regardless of how the live deploy itself is triggered; the repository is for control and history, not gated behind the live URL going up.
+- **Reintroducing an autonomous deploy step.** An earlier version of this pipeline deployed automatically once stage 6 approved a build. That was deliberately reversed: going live is a manual, human triggered step now, not something any stage of this pipeline does on its own.
+- **Reporting the pushed repository as if it were already live.** Stage 7 produces a repository ready for deploy, not a live URL. Do not imply the site is up until a human has actually deployed it.
 - **Letting a shape's own checklist push a price back onto the page.** Some vertical shapes still name a visible price as a convention; this pipeline's no price rule overrides that regardless of what the shape file says. Stage 6 checks for a stray price independently of the composition score for exactly this reason.
 - **Resolving an ambiguous source fact into a confident claim to keep the pipeline moving.** The same rule `landing-page-copy` and `creative-direction` already apply: log the open question, do not silently pick the more specific, more confident reading.
 
@@ -97,8 +98,7 @@ A failed check is not an interrupt by default. Send the specific failure back to
 
 ## Output format
 
-- A live URL for the deployed site.
-- The project's own repository, created regardless of the deploy mechanism.
+- The project's own repository, created and pushed, ready for a human to connect to a host and deploy.
 - `BRIEF.md` from stage 3, kept with the project as reference for any future edit.
 - If a template was promoted: a note of which vertical now has an official starter and where it lives.
 - If any stage interrupted: a short, specific record of what was asked and how it was resolved, so the next run through the same vertical benefits from it.
@@ -109,4 +109,4 @@ A failed check is not an interrupt by default. Send the specific failure back to
 
 - [`references/pipeline-phases.md`](references/pipeline-phases.md) - the exact dispatch shape for each stage, including the structural design pairing used when no template exists yet.
 - [`references/template-promotion.md`](references/template-promotion.md) - the human gated path from an approved, template candidate build to a published starter for its vertical.
-- [`references/deploy-and-repo.md`](references/deploy-and-repo.md) - what the deploy stage actually does: repository creation and the direct file deploy, and why the two are independent of each other.
+- [`references/deploy-and-repo.md`](references/deploy-and-repo.md) - what happens after stage 6 approves a build: repository creation and push, and why going live from there is a manual, human step rather than part of this pipeline.
