@@ -29,10 +29,10 @@ This file is a default set of composition conventions for the shape. When `compe
 ## 3. Service menu and pricing
 
 **Conventions:**
-- A **service menu with duration and price visible per item** lives above the fold at a 1280x800 desktop viewport, OR is one click from the home page and clearly signposted. Hiding prices behind a phone call is off-vertical for the field's modern bar; it tells the visitor the shop is friction-tolerant.
+- A **service menu with duration visible per item, never a price,** lives above the fold at a 1280x800 desktop viewport, OR is one click from the home page and clearly signposted. A posted price the shop no longer charges reads worse than no price at all, and small shops revise pricing more often than a static build gets rebuilt. In place of a number, each service (or the menu as a whole) carries a call to action, resolved by what the business already runs: if a booking platform already shows current pricing (the scheduler itself, a linked price list), send the CTA there; if not, give the CTA a conversation channel instead (a message pre-filled with the service name). Never offer both on the same item.
 - Service descriptions are plain language, not marketing. Two sentences max per service.
 - Service categories (haircut, shave, beard, package) are grouped, not flat-listed, for shops with more than five services.
-- Packages (cut-and-shave, cut-and-color) are surfaced as their own line items with their own price, not as "add $X to the base service".
+- Packages (cut-and-shave, cut-and-color) are surfaced as their own line items, not folded into "add-on to the base service"; each still routes to the same CTA as any other service, never a price of its own.
 - For services where duration varies (skin fade vs classic cut), the longer duration is named honestly; the shop blocks the chair for the time the cut takes.
 
 ## 4. Trust block and identity
@@ -97,7 +97,7 @@ A credible local-service-booking site, against the field of leaders, carries ten
 
 1. A book-now action that owns the hero and persists in the chrome on every page.
 2. **(Density-bearing)** An interior or craft photograph of the **specific** shop above the fold at a 1280x800 desktop viewport, not stock or generic.
-3. A service menu with duration and price visible per item, one click from the home page at most.
+3. A service menu with duration visible per item, never a price, one click from the home page at most; a link-out or conversation CTA stands in for the number.
 4. **(Density-bearing)** A trust block aggregated above the fold: years in business, license or certification, review average plus count. Not scattered across footer and about page.
 5. For practitioner-driven shops: a roster with faces and specialties above the booking CTA.
 6. Address and hours in the chrome (footer at minimum) on every page.
@@ -118,7 +118,7 @@ From the gaps the audited fields tend to share:
 
 - **Booking-first composition.** Most competitors bury the booking action below the fold or behind a third-party scheduler iframe that breaks the visual contract. A build that makes the booking action the largest element on every page, with the shop's identity intact, owns the "we want you to book" position.
 - **Roster-before-booking.** Most competitors gate the practitioner choice inside the booking flow. A build that surfaces a small, photographed roster above the booking CTA owns the "you pick the chair, then the time" position.
-- **Honest service menu.** Most competitors hide prices behind a phone call or list services without durations. A build that posts duration and price for every service owns the "no surprises" position.
+- **Honest service menu.** Most competitors hide even the duration behind a phone call. A build that posts duration for every service, with a clear path to current pricing rather than a stale number, owns the "no surprises" position.
 - **Specific-room photography.** Most competitors use stock or generic salon imagery. A build that leads with the shop's actual room owns the "this is the place" position.
 - **Aggregated trust above the fold.** Most competitors scatter the trust signals (years, license, reviews) across the chrome and about page. A build that pulls them into a single above-the-fold block owns the "we are real, we are local, we are licensed" position before the visitor scrolls.
 

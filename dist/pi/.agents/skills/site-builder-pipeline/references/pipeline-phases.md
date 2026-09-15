@@ -11,7 +11,9 @@ Concrete dispatch instructions for each stage of `site-builder-pipeline`. Each b
 **Instruction:**
 
 ```
-Research [business name], starting from [reference]. Produce a factual document covering: address and hours, offering or menu with prices where visible, review volume and rating if public, and real photos (download and keep the actual files, do not just link to a source that may expire).
+Research [business name], starting from [reference]. Produce a factual document covering: address and hours, the offering (menu or service list, item names and descriptions), review volume and rating if public, and real photos (download and keep the actual files, do not just link to a source that may expire).
+
+Do not record any price. Instead, record whether the business already runs a digital menu, ordering, delivery, or booking platform with its own current pricing (a menu app, a marketplace listing, a maintained link-in-bio menu, the booking platform itself), and if so, its exact link. This single fact is what later decides whether the build features a curated set of items with a link out, or carries the full offering with a conversation CTA instead.
 
 For anything you read that supports more than one plausible interpretation (a generic term versus a proper name, a one off event versus something recurring, especially anything that reads as the business claiming ownership of a person, pet, or object), do not resolve it into the more specific, confident reading. Log it as an open question next to the fact it touches, with the two readings named.
 
@@ -78,6 +80,8 @@ Build the site to the structural plan provided, filling it with the brief, copy,
 Check the build against the vertical's conventions checklist. Mark each convention present, absent with a reason, or routed elsewhere. Three or more absences means this is not ready; state which ones and why.
 
 Separately, check every factual claim on the page against the facts document's open questions. Any claim that resolves a logged ambiguity into the more specific reading is a failure on its own, independent of the composition score.
+
+Separately again, scan the build for any price, dollar or currency figure, or numeric rate attached to an item or service. This is a failure on its own regardless of composition score: no build from this pipeline ever ships a price. Confirm instead that every priced item routes to either a link to an existing digital menu, ordering, or booking platform, or a conversation CTA, per the facts document's record of which platform (if any) the business already runs.
 
 Report a pass or fail. On fail, state the specific reasons only; do not restate everything that already passed.
 ```

@@ -736,9 +736,9 @@
     "references/diagnosis-checklist.md": "f1d2a4bff1a9b764e6523b3f17fc78a4e6f9515ff939ff05346326106e933848"
   },
   "site-builder-pipeline": {
-    "SKILL.md": "9da00197ad0ce4787424654ffd59a5f7d173a2044ce18fd5fa5e3cf526857fd2",
+    "SKILL.md": "cab7bf19f310e60f8bdebd30cf3a8e9096ba17a52bf63a94fa2b7b7f904a16b0",
     "references/deploy-and-repo.md": "d4835fa30e7f41b10825b5da543e4761c7ce7787230a69ff571b6cc018abf8eb",
-    "references/pipeline-phases.md": "68a9e2392ba6f296cf61781f2e71ebb8bf7ab27b0585f2cc9479e79fe0f2a96b",
+    "references/pipeline-phases.md": "69498f6537dad3ca17702da10fa80aa6875b510f795c2a85f3b787a8eb5fb9ea",
     "references/template-promotion.md": "55dc1de107e7fe12d9ca55e6cb51f4784eae7cdb739d45f42d7f8226acfd6093"
   },
   "skill-creation-walkthrough": {
@@ -799,10 +799,10 @@
     "references/shape-ecommerce-catalog.md": "dd6e1035986ef13af56795e24a7345905cfa0fb0e4899f7158430866cf9d05e6",
     "references/shape-ecommerce-standout.md": "95a36fa81428a16cacc34d0e8f05c2001fa4c65622166a7489e34b7e58879e6e",
     "references/shape-hospitality-experience.md": "8d3f0b8296227b7dfc65d50cccb7a097a000034d6119588046523a537d2acc36",
-    "references/shape-hospitality-food.md": "18807c5d7cb1a2f28b2ee03ad8d67ca0399641e5c15a08bf1964a5d309978a68",
+    "references/shape-hospitality-food.md": "d1b95eeae70914f15451bda948455a476eaa39ca24d6f839bf8cb5d9cf4b9405",
     "references/shape-institution-mission.md": "9e387053434d21931e083e4eb092fea2958a6954a57a9d9722619c4b2095fb7c",
     "references/shape-inventory-listing.md": "3301fa4c10d02d22fc4827bfb62702237fcc9fea424c2ee3b5bbb95714bf5b54",
-    "references/shape-local-service-booking.md": "3f27d354c81fbb9f21f786df46ec722d1eac02735c28f458c1ff2a03cb6a75fe",
+    "references/shape-local-service-booking.md": "3ff0297c270e42fb0b0e27eae56f0c92726cf0d80b71bafcc957a648440f5415",
     "references/shape-subscription-app.md": "66550ed130fd9878666ebb16d03aff4f9aeb29232915f330c910b7aba4188807"
   }
 }

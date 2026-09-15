@@ -29,7 +29,7 @@ This file is a default set of composition conventions for the shape. When `compe
 ## 3. The menu
 
 **Conventions:**
-- A **menu page**, not a PDF, with each item carrying a name, a description, and a price visible per item. Hiding prices is off-vertical; it tells the visitor the shop is luxury-pretense rather than confidence.
+- A **menu page**, not a PDF, with each item carrying a name and a description, never a price. A posted price the kitchen no longer charges damages trust worse than no price at all, and a small kitchen's prices move more often than a static build gets rebuilt. In place of a number, each item (or the section) carries a call to action, resolved one of two ways depending on what the business already runs: if a digital menu, ordering, or delivery platform already exists (a menu app, a marketplace listing, a maintained link-in-bio menu), feature a small, deliberately chosen set of standout items here and send the CTA straight to that platform for the complete list and current prices; if no such platform exists, carry the complete menu on this page and give the CTA a conversation channel instead (a message pre-filled with the item's name), since there is nowhere else to send the visitor. Never offer a link-out and a conversation CTA on the same item; the kitchen has exactly one live source of truth for its prices, and the CTA points at whichever one that is.
 - Items are grouped by course (starters, mains, sides, desserts, drinks). For tasting menus, the courses are the structure. For diner-style menus, the categories are functional.
 - Item descriptions are written, not enumerated. Two or three short sentences per item. Adjective stacks ("savory, hearty, comforting") read as marketing; ingredient-and-method copy ("twenty-four-hour bone broth, brisket, eye round") reads as the kitchen.
 - Signature dishes carry a small visible mark (badge, label) so the visitor knows what to order. Hiding the signature inside the list misses the assist.
@@ -74,7 +74,7 @@ This file is a default set of composition conventions for the shape. When `compe
 **Signals this shape carries:**
 - The dish photograph itself, edge-to-edge, dramatic light, single subject.
 - The chef's-perspective passage that does the work of branding.
-- Plain-language menu descriptions with prices.
+- Plain-language menu descriptions, price replaced by a link-out or conversation CTA (see the menu section above).
 - Open cancellation, late, and allergy policies on the reservation page.
 - Visible address and hours.
 - Aggregate ratings near the reservation action.
@@ -86,7 +86,7 @@ For showcase or demo builds, the functional-vs-demo line: real where touchable (
 A credible hospitality-food site, against the field of leaders, carries ten conventions:
 
 1. An edge-to-edge hero photograph of a single dish, room, or moment, above the fold at a 1280x800 desktop viewport.
-2. **(Density-bearing)** A menu page, not a PDF, with name, description, and price visible per item, reachable in one click from the home.
+2. **(Density-bearing)** A menu page, not a PDF, with name and description per item, never a price, reachable in one click from the home; a link-out or conversation CTA stands in for the number.
 3. Item descriptions in ingredient-and-method voice, not adjective stacks; signature dishes marked.
 4. A reservation action that is on-site, not a third-party widget iframe, available from the chrome on every page.
 5. **(Density-bearing)** A short chef-perspective or chef-partner passage, first-person, two short paragraphs at most. The story of the kitchen, not a brand history.
