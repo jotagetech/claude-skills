@@ -37,7 +37,7 @@ It is the build-side counterpart to `competitor-experience-audit`. The audit mea
 
 ## Required inputs
 
-- The site shape the build is for, from the controlled list: `ecommerce-catalog`, `inventory-listing`, `directory-marketplace`, `local-service-booking`, `subscription-app`, `hospitality-food`, `institution-mission`, `b2b-manufacturer`, `ecommerce-standout`, `hospitality-experience`.
+- The site shape the build is for, from the controlled list: `ecommerce-catalog`, `inventory-listing`, `directory-marketplace`, `local-service-booking`, `subscription-app`, `hospitality-food`, `institution-mission`, `b2b-manufacturer`, `ecommerce-standout`, `hospitality-experience`, `local-multibrand-retail-showcase`.
 - An experience bar from `competitor-experience-audit` (the cross-site patterns and gaps for the vertical). If absent, the skill falls back to the per-shape default conventions in the references; the audit-fed path is stronger and is the intended use.
 - The brand register and aesthetic decisions (from `creative-direction` or already settled). This skill does not redefine them.
 - The framework or technical context the build will use (the skill is stack-agnostic but the consumer needs to know).
@@ -211,3 +211,4 @@ Keep notes under 1500 words. The notes are a spec for the implementation skills;
 - [`references/shape-b2b-manufacturer.md`](references/shape-b2b-manufacturer.md) - Stub.
 - [`references/shape-ecommerce-standout.md`](references/shape-ecommerce-standout.md) - Stub.
 - [`references/shape-hospitality-experience.md`](references/shape-hospitality-experience.md) - Stub.
+- [`references/shape-local-multibrand-retail-showcase.md`](references/shape-local-multibrand-retail-showcase.md) - A local, multi-brand, multi-audience retailer with no digital storefront or pricing (added after neither ecommerce shape fit; reasoned default from one real case, not yet audit-validated).
